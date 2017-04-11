@@ -1,14 +1,10 @@
-'use strict'
-
 /**
  * Check if the given string is an boolean
  *
  * @param {String} string
  * @returns {Boolean}
  */
-const isBoolean = (string) => {
-  return (string === 'false') || (string === 'true')
-}
+const isBoolean = string => (string === 'false') || (string === 'true');
 
 /**
  * Extract the operator
@@ -17,50 +13,51 @@ const isBoolean = (string) => {
  * @returns
  */
 const getOperator = (value) => {
-  let operators = /^(>=|<=|>|<).+$/gmi.exec(value)
+  const operators = /^(>=|<=|>|<).+$/gmi.exec(value);
   if (operators && operators.length) {
-    return operators[1]
+    return operators[1];
   }
 
-  return null
-}
+  return null;
+};
+
 const getMongoOperator = (operator) => {
   switch (operator) {
     case '>':
-      return '$gt'
+      return '$gt';
     case '>=':
-      return '$gte'
+      return '$gte';
     case '=':
-      return '$eq'
+      return '$eq';
     case '<':
-      return '$lt'
+      return '$lt';
     case '<=':
-      return '$lte'
+      return '$lte';
     default:
-      return null
+      return null;
   }
-}
+};
 
 const extractKeyValue = (pair) => {
-  let pairs = pair.split('::')
-  let extracted = pairs.reduce((prev, curr, index) => {
+  const pairs = pair.split('::');
+  const extracted = pairs.reduce((prev, curr, index) => {
     if (index % 2 === 0) {
-      prev.property = curr
+      prev.property = curr;
     } else {
-      let operator = getOperator(curr)
-      prev.operator = getMongoOperator(operator)
-      let value = curr.replace(operator, '')
+      let operator = getOperator(curr);
+      prev.operator = getMongoOperator(operator);
+      let value = curr.replace(operator, '');
       if (isBoolean(value)) {
-        prev.value = value === 'true'
+        prev.value = value === 'true';
       } else {
-        prev.value = value
+        prev.value = value;
       }
     }
-    return prev
-  }, {})
+    return prev;
+  }, {});
 
-  return extracted
-}
+  return extracted;
+};
 
 /**
  * Extract filter values
@@ -69,16 +66,16 @@ const extractKeyValue = (pair) => {
  * @returns {Object}
  */
 const extractFilter = (filters) => {
-  if (!filters) return null
-  let result = filters.split('|')
+  if (!filters) return null;
+  const result = filters.split('|')
     .reduce((prev, curr, index) => {
-      let pair = extractKeyValue(curr)
-      prev.push(pair)
+      const pair = extractKeyValue(curr);
+      prev.push(pair);
 
-      return prev
-    }, [])
+      return prev;
+    }, []);
 
-  return result
-}
+  return result;
+};
 
-exports.extract = extractFilter
+exports.extract = extractFilter;
