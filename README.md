@@ -2,7 +2,7 @@
 
 > This repository has the goal to transform a RESTFULL get filter as
 ```
-/api/v1/books?filter=created_at::>=2016-01-01|created_at::2016-01-31
+/api/v1/books?filter=created_at::>=2016-01-01|created_at::<2016-01-31
 ```
 As a result I will get a mongodb query
 
