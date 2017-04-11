@@ -1,0 +1,12 @@
+{
+  "name": "filter-extractor",
+  "version": "1.0.0",
+  "description": "A simple extractor of filter parameters send by get.",
+  "main": "index.js",
+  "repository": "https://github.com/alxolr/filter-extractor.git",
+  "author": "Alexandru Olaru <aolaru@pentalog.fr>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.19.0"
+  }
+}
