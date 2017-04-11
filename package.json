@@ -1,9 +1,9 @@
 {
-  "name": "filter-extractor",
+  "name": "financial-formulas",
   "version": "1.0.0",
   "description": "A simple extractor of filter parameters send by get.",
   "main": "index.js",
-  "repository": "https://github.com/alxolr/filter-extractor.git",
+  "repository": "https://github.com/alxolr/financial-formulas.git",
   "author": "Alexandru Olaru <aolaru@pentalog.fr>",
   "license": "MIT",
   "devDependencies": {
