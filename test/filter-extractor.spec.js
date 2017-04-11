@@ -3,7 +3,7 @@
 const chai = require('chai');
 
 const expect = chai.expect;
-const fe = require('../index');
+const fe = require('../index').filterExtractor;
 
 describe('Filter extractor', () => {
   const configs = [{
