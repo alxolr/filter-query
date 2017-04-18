@@ -1,12 +1,12 @@
 {
-  "name": "financial-formulas",
+  "name": "filter-query",
   "version": "1.0.1",
   "description": "A simple extractor of filter parameters send by get.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
-  "repository": "https://github.com/alxolr/financial-formulas.git",
+  "repository": "https://github.com/alxolr/filter-query.git",
   "author": "Alexandru Olaru <aolaru@pentalog.fr>",
   "license": "MIT",
   "devDependencies": {
