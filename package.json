@@ -1,6 +1,6 @@
 {
   "name": "financial-formulas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple extractor of filter parameters send by get.",
   "main": "index.js",
   "scripts": {
