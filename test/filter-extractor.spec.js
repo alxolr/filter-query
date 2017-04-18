@@ -53,6 +53,20 @@ describe('Filter extractor', () => {
       value: '2016-05-12',
       operator: '$lte',
     }],
+  }, {
+    in: 'created_at::>=2016-05-12|created_at::<2016-06-12',
+    out: [
+      {
+        property: 'created_at',
+        value: '2016-05-12',
+        operator: '$gte',
+      },
+      {
+        property: 'created_at',
+        value: '2016-06-12',
+        operator: '$lt',
+      },
+    ],
   }];
 
   it('should exist the extract method', () => {
