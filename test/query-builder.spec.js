@@ -19,6 +19,23 @@ const configs = [
     in: null,
     out: {},
   },
+  {
+    in: [{
+      property: 'created_at',
+      value: '2016-09-15',
+      operator: '$gt',
+    }, {
+      property: 'created_at',
+      value: '2016-10-20',
+      operator: '$lte',
+    }],
+    out: {
+      created_at: {
+        $gt: new Date('2016-09-15'),
+        $lte: new Date('2016-10-20'),
+      },
+    },
+  },
 ];
 
 describe('Query Builder', () => {
