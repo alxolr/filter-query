@@ -25,7 +25,11 @@ module.exports.build = (filters) => {
   if (!filters) return {};
 
   return filters.reduce((acc, filter) => {
-    acc[filter.property] = buildOperatorValue(filter);
+    if (acc[filter.property] !== undefined) {
+      acc[filter.property] = Object.assign(acc[filter.property], buildOperatorValue(filter));
+    } else {
+      acc[filter.property] = buildOperatorValue(filter);
+    }
 
     return acc;
   }, {});
