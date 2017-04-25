@@ -22,3 +22,18 @@ Books.find(query)
   .then(processBooks)
   .catch(handleError)
 ```
+
+## You can use it as express middleware also;
+```javascript
+const buildQuery = require('filter-query').buildQuery;
+const Router = require('express').Router;
+
+Router.route('/api/v1/books')
+  .get(buildQuery, getBooks);
+
+function getBooks(req, res) {
+  Books.find(req.query) // get the builded query from the middleware
+    .then((books) => res.json(books))
+    .catch(handleError);
+}
+```
