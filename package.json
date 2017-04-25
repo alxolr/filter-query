@@ -1,13 +1,13 @@
 {
   "name": "filter-query",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "A simple extractor of filter parameters send by get.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "repository": "https://github.com/alxolr/filter-query.git",
-  "author": "Alexandru Olaru <aolaru@pentalog.fr>",
+  "author": "Alexandru Olaru <alxolr@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",
